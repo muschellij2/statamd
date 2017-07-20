@@ -13,8 +13,10 @@
 #' filename = "cars.dta"
 #' haven::write_dta(data = datasets::cars, path = filename, version = 13)
 #' statamd::profile_do(dataset = filename)
-#' readLines("profile.do")
 #' file.remove(filename)
+#' file.remove("profile.do")
+#' statamd::profile_do(dataset = NULL, c("display 15+4", "sysuse auto"))
+#' cat(readLines("profile.do"), sep = "\n")
 #' file.remove("profile.do")
 profile_do = function(dataset, ...) {
   if (!is.null(dataset)) {
