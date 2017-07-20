@@ -1,8 +1,16 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
 language: R
 sudo: false
 cache: packages
-
 after_success:
   - Rscript -e 'covr::coveralls(type = "all")'
+  
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: ioViG4HCl2vPyQV3p5yLsVApCIzpJmWnS//6KNeq/R2e4xnhGfq+qddHrkSmczhs/tafloBkua4JIPn3lXOpjkUmc+3DLb9BQBu70eTwt6bZAUf62Bo3P8//0UFEwnuWCGBisc5woFD3BpB3PSVjgdAyd2D+NYFHOtogB4aGKkuaVc14JAxAuNyPoQpt5UJ+2CRZhxcUfbicGadZHFHT28WKgbBS62xEVNn1rhHkZ0jnrg7It43Tgnccy4eku0lebQSonn6ouf50CVLQZavZqPP/fh1aORJOvGBdDGKn3yNkhGVfcTlOmcA1O1JmjKPG7/yV9/NIGVd6y1g6r0A8+P15WT/y30Xd4i/kSwbqR0nsbgyzLCzc78KBLYgNfCn5x8f5waybpD8z6t1KUvRKrnWBcKQr/CHMaxIgPwiJxvGIRab+JIU2T7Nr8fEh4vtrK+n7tyK8dLSrNVXdVWzXMdBj6dZUrAXXi0UhIIaFrSrhVYTE11oeVGRHoCS6L1dn6ZonzGA+8gtDhTiO8kS/WHKDLhhZ76FyArNdrt2+N1EWlAknRWfvvyIHGXLdpfO6BZ6RZdYxsNATvFcQFkXtBBsmP5n8yzy9/+qT9C1Ihw3M15murZZinEftPhXfMh/R4+VYkhKiC6zKzZXeFKd8TxbUcffeBSWoeXW3q/INQXM=
+  file_glob: true
+  file: statamd*.t*gz
+  on:
+    tags: true    
+    repo: muschellij2/statamd
