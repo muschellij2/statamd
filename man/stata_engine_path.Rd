@@ -13,5 +13,7 @@ Path to stata engine
 Determines the path to the Stata Engine
 }
 \examples{
+\dontrun{
 stata_engine_path()
+}
 }

@@ -4,8 +4,9 @@
 #' @return Path to stata engine
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' stata_engine_path()
+#' }
 stata_engine_path = function() {
   eg = expand.grid(SE = c(TRUE, FALSE), version = 11:15)
 
