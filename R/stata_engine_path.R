@@ -4,9 +4,9 @@
 #' @return Path to stata engine
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples
 #' stata_engine_path()
-#' }
+#' have_stata_engine_path()
 stata_engine_path = function() {
   eg = expand.grid(SE = c(TRUE, FALSE), version = 11:15)
 
@@ -19,7 +19,17 @@ stata_engine_path = function() {
     }
   }
   if (!file.exists(sp)) {
-    stop("Stata Not found")
+    sp = NULL
   }
   return(sp)
+}
+
+#' @rdname stata_engine_path
+#' @export
+have_stata_engine_path = function() {
+  sp = stata_engine_path()
+  if (is.null(sp)) {
+    return(FALSE)
+  }
+  return(file.exists(sp))
 }

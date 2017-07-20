@@ -2,9 +2,12 @@
 % Please edit documentation in R/stata_engine_path.R
 \name{stata_engine_path}
 \alias{stata_engine_path}
+\alias{have_stata_engine_path}
 \title{Stata Engine Path}
 \usage{
 stata_engine_path()
+
+have_stata_engine_path()
 }
 \value{
 Path to stata engine
@@ -13,7 +16,6 @@ Path to stata engine
 Determines the path to the Stata Engine
 }
 \examples{
-\dontrun{
 stata_engine_path()
-}
+have_stata_engine_path()
 }
