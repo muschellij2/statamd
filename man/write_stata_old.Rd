@@ -20,3 +20,10 @@ Path of .dta
 \description{
 Convert Stata DTA files to older format for older versions
 }
+\examples{
+filename = "cars.dta"
+haven::write_dta(data = datasets::cars, path = filename, version = 14)
+# can't read this in with stata 13
+statamd::write_stata_old(path = filename)
+file.remove(filename)
+}

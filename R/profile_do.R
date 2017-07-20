@@ -9,6 +9,13 @@
 #'
 #' @return Nothing
 #' @export
+#' @examples
+#' filename = "cars.dta"
+#' haven::write_dta(data = datasets::cars, path = filename, version = 13)
+#' statamd::profile_do(dataset = filename)
+#' readLines("profile.do")
+#' file.remove(filename)
+#' file.remove("profile.do")
 profile_do = function(dataset, ...) {
   if (!is.null(dataset)) {
     x = paste0('use "', dataset, '"')

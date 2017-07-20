@@ -19,3 +19,11 @@ Nothing
 Creates a profile.do that will run before every code chunk.  Helpful for
 reading in the same data sets or setting options
 }
+\examples{
+filename = "cars.dta"
+haven::write_dta(data = datasets::cars, path = filename, version = 13)
+statamd::profile_do(dataset = filename)
+readLines("profile.do")
+file.remove(filename)
+file.remove("profile.do")
+}
