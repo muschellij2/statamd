@@ -3,6 +3,8 @@
 export(profile_do)
 export(stata_engine_path)
 export(stata_engine_path_worker)
+export(stata_knitr_opts)
 export(write_stata_old)
 importFrom(haven,read_dta)
 importFrom(haven,write_dta)
+importFrom(knitr,opts_chunk)

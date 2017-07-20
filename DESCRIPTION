@@ -9,7 +9,8 @@ Authors@R: person(given = "John",
 Maintainer: John Muschelli <muschellij2@gmail.com>
 Description: Provides utilities to help use 'Stata' and 'RMarkdown' together.
 Imports:
-    haven
+    haven,
+    knitr
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
@@ -17,5 +18,4 @@ VignetteBuilder: knitr
 BugReports: https://github.com/muschellij2/statamd/issues
 RoxygenNote: 6.0.1.9000
 Suggests: covr,
-    knitr,
     rmarkdown
