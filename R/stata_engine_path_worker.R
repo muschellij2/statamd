@@ -22,4 +22,5 @@ stata_engine_path_worker = function(SE = FALSE, version = 14) {
                      Windows = paste0("C:/Program Files (x86)/Stata", version,
                                       "/Stata", se, "-64.exe")
   )
+  return(statapath)
 }
