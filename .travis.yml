@@ -3,7 +3,7 @@ sudo: false
 cache: packages
 r_check_args: " --as-cran --install-args=--build"
 after_success:
-  - R CMD check --as-cran --install-args=--build ${PKG_TARBALL} ;
+  - R CMD INSTALL --build ${PKG_TARBALL} ;
   - Rscript -e 'covr::coveralls(type = "all")'
 
 deploy:
