@@ -1,6 +1,7 @@
 language: R
 sudo: false
 cache: packages
+r_check_args: "--install-args=--build"
 after_success:
   - Rscript -e 'covr::coveralls(type = "all")'
   
@@ -13,3 +14,4 @@ deploy:
   file: statamd*.t*gz
   on:
     tags: true    
+    repo: muschellij2/statamd
